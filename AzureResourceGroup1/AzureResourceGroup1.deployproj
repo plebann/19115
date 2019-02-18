@@ -28,7 +28,7 @@
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <Content Include="WebSite.json" />
-    <Content Include="WebSite.parameters.json" />
+    <None Include="WebSite.sample.parameters.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
