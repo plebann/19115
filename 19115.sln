@@ -3,35 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebApplication", "WebApplication\", "{AFECA8DB-F232-4D13-B8F8-116FB5FBF004}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_62324"
-		Debug.AspNetCompiler.PhysicalPath = "WebApplication\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62324\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_62324"
-		Release.AspNetCompiler.PhysicalPath = "WebApplication\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62324\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "62324"
-		SlnRelativePath = "WebApplication\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResourceGroup1", "AzureResourceGroup1\AzureResourceGroup1.deployproj", "{DCB04498-2B2D-440E-A5F8-F0FCCBDAC567}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AFECA8DB-F232-4D13-B8F8-116FB5FBF004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFECA8DB-F232-4D13-B8F8-116FB5FBF004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB04498-2B2D-440E-A5F8-F0FCCBDAC567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB04498-2B2D-440E-A5F8-F0FCCBDAC567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB04498-2B2D-440E-A5F8-F0FCCBDAC567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB04498-2B2D-440E-A5F8-F0FCCBDAC567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
