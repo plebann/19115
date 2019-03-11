@@ -7,6 +7,5 @@ namespace _19115.Api.Client
 	public interface INotificationClient
 	{
 		Task<List<Notification>> GetNotificationsAsync(List<Filter> filters, List<string> operators);
-		List<Notification> GetNotificationsPost(List<Filter> filters, List<string> operators);
 	}
 }

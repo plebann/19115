@@ -1,31 +1,132 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = @Resource.Layout_Menu_Data;
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container mt-lg-3">
+	<div class="row mt-2">
+		<div class="col">
+			Wybierz dzielnicę
+			<select id="district">
+				<option value="">Wszystkie</option>
+				<option value="Bemowo">Bemowo</option>
+				<option value="Białołęka">Białołęka</option>
+				<option value="Bielany">Bielany</option>
+				<option value="Mokotów">Mokotów</option>
+				<option value="Ochota">Ochota</option>
+				<option value="Praga-Południe">Praga-Południe</option>
+				<option value="Praga-Północ">Praga-Północ</option>
+				<option value="Rembertów">Rembertów</option>
+				<option value="Śródmieście">Śródmieście</option>
+				<option value="Targówek">Targówek</option>
+				<option value="Ursus">Ursus</option>
+				<option value="Ursynów">Ursynów</option>
+				<option value="Wawer">Wawer</option>
+				<option value="Wesoła">Wesoła</option>
+				<option value="Wilanów">Wilanów</option>
+				<option value="Włochy">Włochy</option>
+				<option value="Wola">Wola</option>
+				<option value="Żoliborz">Żoliborz</option>
+			</select>
+		</div>
+		<div class="col">
+			Wybierz podkategorię
+			<select id="subcategory">
+				<option value="">Wszystkie</option>
+				<option value="Drogi">Drogi</option>
+				<option value="Inne">Inne</option>
+				<option value="Komunikacja">Komunikacja</option>
+				<option value="Komunikacja/Transport">Komunikacja/Transport</option>
+				<option value="Odśnieżanie">Odśnieżanie</option>
+				<option value="Śmieci">Śmieci</option>
+				<option value="Uszkodzenie, dewastacja">Uszkodzenie, dewastacja</option>
+				<option value="Wodno-kanalizacyjne">Wodno-kanalizacyjne</option>
+				<option value="Zieleń">Zieleń</option>
+				<option value="Zwierzęta">Zwierzęta</option>
+			</select>
+		</div>
+	</div>
+	<div class="row mt-2">
+		<button id="load" type="button" class="btn btn-primary" onclick="loadEvents()">@Resource.ButtonTitle_LoadData</button>
+	</div>
+	<div class="row mt-2">
+		<div class="loader"></div>
+		<table id="notifications" style="display:none;">
+			<thead>
+				<tr>
+					<th>Kategoria</th>
+					<th>Podkategoria</th>
+					<th>Dzielnica</th>
+					<th>Ulica</th>
+					<th>Zdarzenie</th>
+					<th>Data</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div class="row mt-2">
+		Dane prezentowane na stronie pochodzą z serwisu otwarte dane po warszawsku: <a href="http://api.um.warszawa.pl">http://api.um.warszawa.pl</a>
+	</div>
 </div>
+@section scripts {
+	<script type="text/javascript">
+		function loadEvents() {
+			showProgress(true);
+			var serviceURL = '@Url.Action("GetDataAjax", "Home")';
+			$.ajax({
+				type: "POST",
+				url: serviceURL,
+				data: JSON.stringify({ 'district': $("#district").val(), 'subcategory': $("#subcategory").val() }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: successFunc,
+				error: errorFunc,
+			}).always(hideProgress);
+		};
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+		function successFunc(data, status) {
+			let html = "";
+			var i;
+
+			for (i = 0; i < data.length; i++) {
+				html += "<tr><td> "
+					+ data[i].Category + "</td><td>"
+					+ data[i].Subcategory + "</td><td>"
+					+ data[i].District + "</td><td>"
+					+ data[i].Street + "</td><td>"
+					+ data[i].Event + "</td><td>"
+					+ timeConverter(data[i].CreateDate) + "</td></tr>";
+			}
+			$("#notifications tbody").html(html);
+			$("#notifications").css('display', "none");
+		};
+
+		function errorFunc() {
+			alert('error');
+		};
+
+		function showProgress() {
+			$(".loader").css('display', "block");
+			$("#notifications").css('display', "none");
+			$("#load").attr('disabled', true)
+		}
+		function hideProgress() {
+			$(".loader").css('display', "none");
+			$("#notifications").css('display', "block");
+			$("#load").attr('disabled', false)
+		}
+
+		function timeConverter(UNIX_timestamp) {
+			var a = new Date(UNIX_timestamp);
+			var months = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'];
+			var year = a.getFullYear();
+			var month = months[a.getMonth()];
+			var date = a.getDate();
+			var hour = a.getHours();
+			var min = a.getMinutes();
+			var sec = a.getSeconds();
+			var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+			return time;
+		}
+	</script>
+}

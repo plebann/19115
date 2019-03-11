@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,12 +45,14 @@
   <ItemGroup>
     <Compile Include="Client\BaseClient.cs" />
     <Compile Include="Client\INotificationClient.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\RootObject.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Utils\JsonSerializer.cs" />
     <Compile Include="Client\NotificationClient.cs" />
     <Compile Include="Utils\RestException.cs" />
     <Compile Include="Extensions\RestSharpExtensions.cs" />
     <Compile Include="Models\Filter.cs" />
-    <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

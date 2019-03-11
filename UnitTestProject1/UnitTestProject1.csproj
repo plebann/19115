@@ -19,6 +19,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,15 +44,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapperModule.cs" />
-    <Compile Include="GetNotificationQueryHandlerTest.cs" />
-    <Compile Include="NinjectWebCommon.cs" />
     <Compile Include="NotificationClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Castle.Core">
+      <Version>4.3.1</Version>
+    </PackageReference>
     <PackageReference Include="MediatR">
       <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="MediatR.Ninject">
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
       <Version>1.4.0</Version>
@@ -61,6 +65,12 @@
     </PackageReference>
     <PackageReference Include="Ninject">
       <Version>3.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="Ninject.Extensions.Conventions">
+      <Version>3.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Ninject.Extensions.Factory">
+      <Version>3.3.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

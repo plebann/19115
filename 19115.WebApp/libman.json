@@ -1,84 +1,92 @@
 {
   "version": "1.0",
   "defaultProvider": "cdnjs",
-	"libraries": [
-		{
-			"library": "jquery@3.3.1",
-			"destination": "lib/jquery/",
-			"files": [
-				"jquery.min.js",
-				"jquery.js",
-				"jquery.slim.js",
-				"jquery.min.map",
-				"jquery.slim.min.js",
-				"jquery.slim.min.map"
-			]
-		},
-		{
-			"library": "jquery-validate@1.19.0",
-			"destination": "lib/jquery-validate/",
-			"files": [
-				"jquery.validate.min.js",
-				"jquery.validate.js",
-				"localization/messages_pl.js",
-				"localization/messages_pl.min.js"
-			]
-		},
-		{
-			"library": "modernizr@2.8.3",
-			"destination": "lib/modernizr/",
-			"files": [
-				"modernizr.min.js",
-				"modernizr.js"
-			]
-		},
-		{
-			"library": "popper.js@1.14.7",
-			"destination": "lib/popper.js/",
-			"files": [
-				"popper.min.js",
-				"popper-utils.js",
-				"popper-utils.js.map",
-				"popper-utils.min.js",
-				"popper-utils.min.js.map",
-				"popper.js",
-				"popper.js.map",
-				"popper.min.js.map",
-				"esm/popper-utils.js",
-				"esm/popper-utils.js.map",
-				"esm/popper-utils.min.js",
-				"esm/popper-utils.min.js.map",
-				"esm/popper.js",
-				"esm/popper.js.map",
-				"esm/popper.min.js",
-				"esm/popper.min.js.map",
-				"umd/popper-utils.js",
-				"umd/popper-utils.js.map",
-				"umd/popper-utils.min.js",
-				"umd/popper-utils.min.js.map",
-				"umd/popper.js",
-				"umd/popper.js.map",
-				"umd/popper.min.js",
-				"umd/popper.min.js.map"
-			]
-		},
-		{
-			"provider": "cdnjs",
-			"library": "twitter-bootstrap@3.4.1",
-			"destination": "lib/twitter-bootstrap/",
-			"files": [
-				"js/bootstrap.js",
-				"css/bootstrap-theme.css",
-				"css/bootstrap-theme.css.map",
-				"css/bootstrap-theme.min.css",
-				"css/bootstrap-theme.min.css.map",
-				"css/bootstrap.css",
-				"css/bootstrap.css.map",
-				"css/bootstrap.min.css",
-				"css/bootstrap.min.css.map",
-				"js/bootstrap.min.js",
-				"js/npm.js"
-			]
-		}
-	]
+  "libraries": [
+    {
+      "library": "jquery@3.3.1",
+      "destination": "lib/jquery/",
+      "files": [
+        "jquery.min.js",
+        "jquery.js",
+        "jquery.slim.js",
+        "jquery.min.map",
+        "jquery.slim.min.js",
+        "jquery.slim.min.map"
+      ]
+    },
+    {
+      "library": "jquery-validate@1.19.0",
+      "destination": "lib/jquery-validate/",
+      "files": [
+        "jquery.validate.min.js",
+        "jquery.validate.js",
+        "localization/messages_pl.js",
+        "localization/messages_pl.min.js"
+      ]
+    },
+    {
+      "library": "modernizr@2.8.3",
+      "destination": "lib/modernizr/",
+      "files": [
+        "modernizr.min.js",
+        "modernizr.js"
+      ]
+    },
+    {
+      "library": "popper.js@1.14.7",
+      "destination": "lib/popper.js/",
+      "files": [
+        "popper.min.js",
+        "popper-utils.js",
+        "popper-utils.js.map",
+        "popper-utils.min.js",
+        "popper-utils.min.js.map",
+        "popper.js",
+        "popper.js.map",
+        "popper.min.js.map",
+        "esm/popper-utils.js",
+        "esm/popper-utils.js.map",
+        "esm/popper-utils.min.js",
+        "esm/popper-utils.min.js.map",
+        "esm/popper.js",
+        "esm/popper.js.map",
+        "esm/popper.min.js",
+        "esm/popper.min.js.map",
+        "umd/popper-utils.js",
+        "umd/popper-utils.js.map",
+        "umd/popper-utils.min.js",
+        "umd/popper-utils.min.js.map",
+        "umd/popper.js",
+        "umd/popper.js.map",
+        "umd/popper.min.js",
+        "umd/popper.min.js.map"
+      ]
+    },
+    {
+      "library": "twitter-bootstrap@4.3.1",
+      "destination": "lib/twitter-bootstrap/",
+      "files": [
+        "js/bootstrap.bundle.js",
+        "css/bootstrap-grid.css",
+        "css/bootstrap-grid.css.map",
+        "css/bootstrap-grid.min.css",
+        "css/bootstrap-grid.min.css.map",
+        "css/bootstrap-reboot.css",
+        "css/bootstrap-reboot.css.map",
+        "css/bootstrap-reboot.min.css",
+        "css/bootstrap-reboot.min.css.map",
+        "css/bootstrap.css",
+        "css/bootstrap.css.map",
+        "css/bootstrap.min.css",
+        "css/bootstrap.min.css.map",
+        "js/bootstrap.bundle.js.map",
+        "js/bootstrap.bundle.min.js",
+        "js/bootstrap.bundle.min.js.map",
+        "js/bootstrap.js",
+        "js/bootstrap.js.map",
+        "js/bootstrap.min.js",
+        "js/bootstrap.min.js.map"
+      ]
+    }
+  ]
 }

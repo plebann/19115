@@ -1,9 +1,8 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace _19115.WebApp
 {
-    public class BundleConfig
+	public class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
@@ -20,9 +19,10 @@ namespace _19115.WebApp
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/lib/twitter-bootstrap/js/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+
+			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/lib/twitter-bootstrap/css/bootstrap.css",
                       "~/Content/site.css"));
-        }
+		}
     }
 }

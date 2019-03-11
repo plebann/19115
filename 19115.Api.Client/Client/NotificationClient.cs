@@ -10,16 +10,9 @@ namespace _19115.Api.Client
 	public class NotificationClient : BaseClient, INotificationClient
 	{
 		private static readonly string ResourceId = ConfigurationManager.AppSettings.Get("ResourceId");
-		public NotificationClient(
-			//ICacheService cache, 
-			string baseUrl,
-			string apiKey
-			)
-		: base(
-			  //cache, 
-			  new Utils.JsonSerializer(),
-			  baseUrl,
-			  apiKey) { }
+		public NotificationClient(string baseUrl, string apiKey) 
+			: base(new Utils.JsonSerializer(), baseUrl, apiKey)
+		{ }
 
 		public async Task<List<Notification>> GetNotificationsAsync(List<Filter> filters, List<string> operators)
 		{
@@ -31,17 +24,7 @@ namespace _19115.Api.Client
 			var result = await GetAsync<RootObject>(request);
 			return result.result.result.Notifications;
 		}
-
-		public List<Notification> GetNotificationsPost(List<Filter> filters, List<string> operators)
-		{
-			var request = _getRequest("action/19115store_getNotificationsPost", Method.POST);
-
-			request.AddJsonBody(new { filters = JsonConvert.SerializeObject(filters), operators = JsonConvert.SerializeObject(operators) });
-
-			var result = Get<RootObject>(request);
-			return result.result.result.Notifications;
-		}
-
+		
 		private RestRequest _getRequest(string action, Method method)
 		{
 			var request = new RestRequest(action, method);

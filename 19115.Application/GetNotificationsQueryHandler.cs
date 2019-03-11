@@ -4,21 +4,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using _19115.Api.Client;
 using _19115.Api.Models;
-using AutoMapper;
 using MediatR;
 
 namespace _19115.Application
 {
 	public class GetNotificationsQueryHandler : IRequestHandler<GetNotificationQuery, List<Notification>>
 	{
-		private readonly IMapper _mapper;
 		private readonly INotificationClient _notificationClient;
 
-		public GetNotificationsQueryHandler(IMapper mapper)
+		public GetNotificationsQueryHandler()
 		{
-			_mapper = mapper;
 			var apiKey = ConfigurationManager.AppSettings.Get("ApiKey");
-			var url = ConfigurationManager.AppSettings.Get("Url");
+			var url = ConfigurationManager.AppSettings.Get("WarsawApiUrl");
 			_notificationClient = new NotificationClient(url, apiKey);
 		}
 
@@ -30,9 +27,9 @@ namespace _19115.Application
 				filters.Add(
 				new Filter
 				{
-					field = nameof(query.District).ToUpper(),
-					@operator = "EQ",
-					value = query.District
+					Field = nameof(query.District).ToUpper(),
+					Operator = "EQ",
+					Value = query.District
 				});
 			}
 			if (!string.IsNullOrEmpty(query.Subcategory))
@@ -40,9 +37,9 @@ namespace _19115.Application
 				filters.Add(
 				new Filter
 				{
-					field = nameof(query.Subcategory).ToUpper(),
-					@operator = "EQ",
-					value = query.Subcategory
+					Field = nameof(query.Subcategory).ToUpper(),
+					Operator = "EQ",
+					Value = query.Subcategory
 				});
 			}
 

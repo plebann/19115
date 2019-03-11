@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19115.Api.Client", "19115.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{27FC4698-2C2A-410D-9EB9-8C382D16A3CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19115.Resources", "19115.Resources\19115.Resources.csproj", "{BC830249-D259-4BB9-BDF4-0CD985D9E053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,11 +46,16 @@ Global
 		{27FC4698-2C2A-410D-9EB9-8C382D16A3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27FC4698-2C2A-410D-9EB9-8C382D16A3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27FC4698-2C2A-410D-9EB9-8C382D16A3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC830249-D259-4BB9-BDF4-0CD985D9E053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC830249-D259-4BB9-BDF4-0CD985D9E053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC830249-D259-4BB9-BDF4-0CD985D9E053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC830249-D259-4BB9-BDF4-0CD985D9E053}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = pl-PL
 		SolutionGuid = {86234EF5-CA15-4D13-A6B2-02F0ECF82E36}
 	EndGlobalSection
 EndGlobal

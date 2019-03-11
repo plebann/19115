@@ -16,7 +16,7 @@ namespace UnitTestProject1
 		public void Init()
 		{
 			apiKey = ConfigurationManager.AppSettings.Get("ApiKey");
-			url = ConfigurationManager.AppSettings.Get("Url");
+			url = ConfigurationManager.AppSettings.Get("WarsawApiUrl");
 		}
 
 		[TestMethod]
@@ -26,15 +26,15 @@ namespace UnitTestProject1
 			var filters = new List<Filter>()
 			{
 				new Filter{
-					field = "DISTRICT",
-					@operator = "EQ",
-					value = "Żoliborz"
+					Field = "DISTRICT",
+					Operator = "EQ",
+					Value = "Żoliborz"
 				},
 				new Filter
 				{
-					field = "SUBCATEGORY",
-					@operator = "EQ",
-					value = "Komunikacja/Transport"
+					Field = "SUBCATEGORY",
+					Operator = "EQ",
+					Value = "Komunikacja/Transport"
 				}
 			};
 			var operators = new List<string>();
